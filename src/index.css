@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+/* react-datepicker overrides */
+.react-datepicker {
+  @apply !font-sans !border-slate-200 dark:!border-slate-800 !bg-white dark:!bg-slate-950 !rounded-2xl !shadow-2xl;
+}
+
+.react-datepicker__header {
+  @apply !bg-slate-50 dark:!bg-slate-900 !border-b !border-slate-100 dark:!border-slate-800 !rounded-t-2xl;
+}
+
+.react-datepicker__day--selected {
+  @apply !bg-primary-container !rounded-lg;
+}
+
+.react-datepicker__day:hover {
+  @apply !bg-slate-100 dark:!bg-slate-800 !rounded-lg;
+}
+
+.react-datepicker__current-month, .react-datepicker__day-name {
+  @apply !text-slate-900 dark:!text-white !font-black !uppercase !tracking-widest !text-[10px];
+}
+
+.react-datepicker__day {
+  @apply !text-slate-700 dark:!text-slate-300 !text-xs !font-bold;
+}
+
+.react-datepicker-popper {
+  @apply !z-[9999];
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary-container: #4f46e5;
+  --color-secondary-container: #818cf8;
+  --color-tertiary: #f59e0b;
+  --color-error: #ef4444;
+}
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans selection:bg-primary-container/20 selection:text-primary-container;
+  }
+
+  .dark body {
+    @apply bg-slate-950 text-slate-50;
+  }
+}
+
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors;
+  }
+}
