@@ -52,12 +52,12 @@ export const Sidebar = ({ activeView, onViewChange, theme, onToggleTheme }: Side
       <nav className="flex-1 overflow-y-auto custom-scrollbar pr-1">
         <div className="space-y-1">
           <NavItem icon="Dashboard" label="Dashboard" active={activeView === 'dashboard'} onClick={() => onViewChange('dashboard')} />
+          <NavItem icon="Projects" label="Projects" active={activeView === 'projects'} onClick={() => onViewChange('projects')} />
           <NavItem icon="Tasks" label="Tasks" active={activeView === 'tasks'} onClick={() => onViewChange('tasks')} />
           <NavItem icon="Boards" label="Boards" active={activeView === 'boards'} onClick={() => onViewChange('boards')} />
           <NavItem icon="Check" label="My Checklist" active={activeView === 'checklist'} onClick={() => onViewChange('checklist')} />
           <NavItem icon="Calendar" label="Calendar" active={activeView === 'calendar'} onClick={() => onViewChange('calendar')} />
           <NavItem icon="Users" label="Account Engagements" active={activeView === 'engagements'} onClick={() => onViewChange('engagements')} />
-          <NavItem icon="Projects" label="Projects" active={activeView === 'projects'} onClick={() => onViewChange('projects')} />
           <NavItem icon="Delete" label="Recently Deleted" active={activeView === 'trash'} onClick={() => onViewChange('trash')} />
         </div>
         

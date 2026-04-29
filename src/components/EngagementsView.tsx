@@ -303,26 +303,8 @@ export const EngagementsView = () => {
                 <div className="p-3 bg-primary-container/10 rounded-2xl">
                   <Icons.Boards className="w-5 h-5 text-primary-container" />
                 </div>
-                <div>
-                  <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Engagement</p>
-                  <p className="text-[10px] font-black text-primary-container uppercase tracking-widest">#{engagement.id.slice(0, 6)}</p>
-                </div>
               </div>
               <div className="flex flex-col items-end gap-2">
-                <select 
-                  value={engagement.status}
-                  onChange={(e) => updateEngagementStatus(engagement.id, e.target.value as EngagementStatus)}
-                  className={cn(
-                    "text-[9px] font-black px-3 py-1 rounded-full border uppercase tracking-tighter outline-none cursor-pointer appearance-none text-center",
-                    statusColors[engagement.status as keyof typeof statusColors]
-                  )}
-                >
-                  <option value="Active">Active</option>
-                  <option value="Upcoming">Upcoming</option>
-                  <option value="On Hold">On Hold</option>
-                  <option value="Completed">Completed</option>
-                  <option value="Cancelled">Cancelled</option>
-                </select>
                 <span className={cn(
                   "text-[8px] font-black px-2 py-0.5 rounded uppercase tracking-widest",
                   engagement.priority === 'Urgent' ? "bg-error text-white" : "text-slate-400 bg-slate-50 dark:bg-white/5"
