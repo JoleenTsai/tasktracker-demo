@@ -93,7 +93,13 @@ export const Sidebar = ({ activeView, onViewChange, theme, onToggleTheme }: Side
         </button>
         <NavItem icon="Settings" label="Settings" active={activeView === 'settings'} onClick={() => onViewChange('settings')} />
         <NavItem icon="Help" label="Help" active={activeView === 'help'} onClick={() => onViewChange('help')} />
-        <button className="flex w-full items-center gap-3 px-4 py-2 text-error hover:bg-error/5 rounded-lg transition-all mt-2">
+        <button 
+          onClick={async () => {
+            await fetch('/api/auth/google/logout', { method: 'POST' });
+            window.location.reload();
+          }}
+          className="flex w-full items-center gap-3 px-4 py-2 text-error hover:bg-error/5 rounded-lg transition-all mt-2"
+        >
           <Icons.LogOut className="h-4 w-4" />
           <span className="text-sm font-semibold">Logout</span>
         </button>

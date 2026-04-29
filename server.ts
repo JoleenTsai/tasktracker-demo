@@ -87,6 +87,12 @@ async function startServer() {
     res.json({ isAuthenticated: !!tokens });
   });
 
+  // Logout endpoint
+  app.post("/api/auth/google/logout", (req, res) => {
+    res.clearCookie('google_tokens');
+    res.json({ success: true });
+  });
+
   // List Google Drive files
   app.get("/api/drive/files", async (req, res) => {
     const tokenStr = req.cookies.google_tokens;
